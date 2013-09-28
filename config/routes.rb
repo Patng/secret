@@ -1,4 +1,6 @@
 Secret::Application.routes.draw do
+  resources :communities
+
   devise_for :users
   root :to => 'pages#home'
 
