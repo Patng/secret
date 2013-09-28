@@ -1,6 +1,18 @@
+<p id="notice"><%= notice %></p>
+
 <p>
   <strong>Description:</strong>
   <%= @community.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @community.category %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @community.location %>
 </p>
 
 <%= link_to 'Edit', edit_community_path(@community) %> |

@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928083040) do
+ActiveRecord::Schema.define(version: 20130928175907) do
 
   create_table "communities", force: true do |t|
     t.string   "description"
+    t.string   "category"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

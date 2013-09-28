@@ -1,6 +1,12 @@
 Secret::Application.routes.draw do
   resources :communities
 
+  resources :communities do
+    member do
+      get :join
+    end
+  end
+
   devise_for :users
   root :to => 'pages#home'
 

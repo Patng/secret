@@ -18,7 +18,7 @@ class CommunitiesControllerTest < ActionController::TestCase
 
   test "should create community" do
     assert_difference('Community.count') do
-      post :create, community: { description: @community.description }
+      post :create, community: { category: @community.category, description: @community.description, location: @community.location }
     end
 
     assert_redirected_to community_path(assigns(:community))
@@ -35,7 +35,7 @@ class CommunitiesControllerTest < ActionController::TestCase
   end
 
   test "should update community" do
-    patch :update, id: @community, community: { description: @community.description }
+    patch :update, id: @community, community: { category: @community.category, description: @community.description, location: @community.location }
     assert_redirected_to community_path(assigns(:community))
   end
 
