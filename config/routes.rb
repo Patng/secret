@@ -1,6 +1,5 @@
 Secret::Application.routes.draw do
-  resources :communities
-
+  
   resources :communities do
     member do
       get :join

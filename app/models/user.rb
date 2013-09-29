@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :communities, :uniq => true
+  has_many :owned, :class_name => "Community", :foreign_key => "admin_id"
 end
