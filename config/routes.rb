@@ -1,5 +1,5 @@
 Secret::Application.routes.draw do
-  
+
   resources :communities do
     member do
       get :join
@@ -7,6 +7,8 @@ Secret::Application.routes.draw do
   end
 
   devise_for :users
+    get 'users/:id' => 'users#show', as: :user
+
   root :to => 'pages#home'
 
   get 'about' => 'pages#about'
