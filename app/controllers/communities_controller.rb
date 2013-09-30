@@ -6,7 +6,7 @@ class CommunitiesController < ApplicationController
   # GET /communities
   # GET /communities.json
   def index
-    @communities = Community.all
+    @communities = Community.order("created_at desc")
   end
 
   # GET /communities/1

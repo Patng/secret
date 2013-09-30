@@ -1,15 +1,22 @@
-<%= link_to 'New Post', new_post_path %>
+<div class="row">
+  <div class="span8">
+    <%= link_to 'New Post', new_post_path %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Community</th>
-      <th></th>
-    </tr>
-  </thead>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Community</th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <%= render @posts %>
-  </tbody>
-</table>
+      <tbody>
+        <%= render @posts %>
+      </tbody>
+    </table>
+  </div>
+  <div class "span4">
+    <%= render 'layouts/sidebar' %>
+  </div>
+</div>

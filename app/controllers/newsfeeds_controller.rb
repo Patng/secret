@@ -3,6 +3,7 @@ class NewsfeedsController < ApplicationController
 	
   def show
   	@user = current_user
-  	@posts = @user.posts
+  	@posts = @user.posts.order("created_at desc")
+  	@communities = Community.all
   end
 end

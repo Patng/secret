@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+	before_filter :authenticate_user!
+	
   def show
-  	@user = User.find(params[:id])
-  	@communities = @user.communities
-  	@posts = @user.posts
+  	@user = current_user
+  	@communities = @user.communities.order("created_at desc")
+  	@posts = @user.posts.order("created_at desc")
   end
 end
