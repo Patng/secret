@@ -2,13 +2,16 @@
 	<div class="span6 offset3">
 		<div class="well">
 			<p>
-				<strong>Description:</strong>
-				<%= @post.description %>
+			  <strong>Description:</strong>
+			  <%= @post.description %>
 			</p>
-			<%= link_to 'Edit', edit_post_path(@post) %> |
+
+			<p>
+			  <strong>Community:</strong>
+			  <%= @post.community_id %>
+			</p>
+
 			<%= link_to 'Back', posts_path %>
-			
 		</div>
 	</div>
 </div>
-

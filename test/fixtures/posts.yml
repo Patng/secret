@@ -2,6 +2,8 @@
 
 one:
   description: MyString
+  community_id: 1
 
 two:
   description: MyString
+  community_id: 1
