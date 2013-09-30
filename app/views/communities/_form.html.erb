@@ -2,8 +2,8 @@
   <%= f.error_notification %>
   
   <%= f.input :description %>
-  <%= f.input :category, collection: ["School", "Organization", "Company", "Place", "Society", "Interest"] %>
-  <%= f.input :location, collection: ["Hong Kong"] %>
+  <%= f.input :category, collection: ["School", "Organization", "Company", "Place", "Society", "Interest"], include_blank: false %>
+  <%= f.input :location, collection: ["Hong Kong"], include_blank: false %>
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary"%>

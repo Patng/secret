@@ -1,5 +1,6 @@
 Secret::Application.routes.draw do
 
+  get "newsfeeds/show"
   resources :posts
 
   resources :communities do
@@ -11,7 +12,8 @@ Secret::Application.routes.draw do
   devise_for :users
     get 'users/:id' => 'users#show', as: :user
 
-  root :to => 'pages#home'
+
+  root :to => 'newsfeeds#show'
 
   get 'about' => 'pages#about'
   

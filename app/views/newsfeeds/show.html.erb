@@ -1,0 +1,15 @@
+<%= link_to 'New Post', new_post_path %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Community</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @posts %>
+  </tbody>
+</table>

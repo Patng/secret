@@ -18,4 +18,18 @@
   <%= @community.users.size %>
 </p>
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Community</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @posts %>
+  </tbody>
+</table>
+
 <%= link_to 'Back', communities_path %>

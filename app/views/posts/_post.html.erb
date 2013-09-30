@@ -1,4 +1,4 @@
 <tr>
   <td><%= link_to post.description, post %></td>
-  <td><%= post.community_id %></td>
+  <td><%= link_to post.community.description, post.community %></td>
 </tr>
