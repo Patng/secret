@@ -5,6 +5,8 @@ gem 'rails', '4.0.0.rc2'
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'devise'
 gem 'simple_form', '~> 3.0.0.rc'
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 # Use sqlite3 as the database for Active Record
 group :production do
