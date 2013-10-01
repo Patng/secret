@@ -2,6 +2,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Cover</th>
       <th>Description</th>
       <th>Category</th>
       <th>Location</th>
@@ -14,16 +15,6 @@
   </tbody>
 </table>
 <h2>My Posts</h2>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Community</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @posts %>
-  </tbody>
-</table>
+<div class="posts">
+  <%= render @posts %>
+</div>

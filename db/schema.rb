@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001034847) do
+ActiveRecord::Schema.define(version: 20131001065954) do
 
   create_table "communities", force: true do |t|
     t.string   "description"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20131001034847) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "admin_id"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   create_table "communities_users", id: false, force: true do |t|

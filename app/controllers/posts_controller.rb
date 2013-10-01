@@ -5,8 +5,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at desc")
+    @posts = Post.order("created_at desc").page(params[:page]).per_page(10)
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+      format.js
+    end
   end
 
   # GET /posts/1

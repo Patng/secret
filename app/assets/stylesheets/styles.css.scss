@@ -1,22 +1,48 @@
 $baseFontFamily: Oxygen;
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
-$navbarBackgroundHighlight: white;
-$navbarBackground: white;
-$btnPrimaryBackground: purple;
+$navbarBackgroundHighlight: #663366;
+$navbarBackground: #663366;
+$btnPrimaryBackground: #663366;
+$btnPrimaryBackgroundHighlight: #663366;
 
 @import 'bootstrap';
 
 body {
 	padding-top: 60px;
+	background: #F0F0F0;
+	a {
+  	color: #663366;
+  }
+  a:hover {
+   	text-decoration: none;
+  	color: #663366;
+  }
 }
 
 @import 'bootstrap-responsive';
 
-.navbar-inner{
-    @include box-shadow(none !important);
-    border: 0;
+.navbar-simple .brand {
+	color: white;
 }
+
+.navbar-simple .navbar-inner{
+    border: 0;
+	  filter: none !important;
+		box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+		-moz-box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+		-webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.navbar .nav > li  {
+    a {
+    	color: white;
+    }
+    a:hover {
+    	color: white;
+    }
+}
+
 
 .footer {
 	margin-top: 50px;
@@ -24,4 +50,31 @@ body {
 	a {
 		color: $gray;
 	}
+}
+
+.box {
+	margin: 5px;
+	padding: 5px;
+	font-size: 11px;
+	line-height: 1.4em;
+	float: left;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px #444;
+	width: 100%;
+	background: white;
+}
+
+.box img {
+	display: block;
+	width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.description {
+	margin: 10px 0 5px;
+
 }

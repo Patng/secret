@@ -1,23 +1,14 @@
 <div class="row">
-  <div class="span8">
-    <%= link_to 'New Post', new_post_path %>
+  <div class="span5 offset2">
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Description</th>
-          <th>Community</th>
-          <th></th>
-        </tr>
-      </thead>
+	  <%= button_to('Write a Gossip', new_post_path, :class => 'btn btn-large btn-block btn-primary', :method => :get) %>
 
-      <tbody>
-        <%= render @posts %>
-      </tbody>
-    </table>
+    <div class="posts">
+      <%= render @posts %>
+      <%= will_paginate @posts %>
+    </div>
   </div>
-  <div class "span4">
+  <div class="span3 offset1">
     <%= render 'layouts/sidebar' %>
   </div>
 </div>

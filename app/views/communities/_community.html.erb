@@ -1,6 +1,8 @@
-<tr>
-	<td><%= link_to community.description, community %></td>
-	<td><%= community.category %></td>
-	<td><%= community.location %></td>
-	<td><%= link_to 'Join', join_community_path(community) %></td>
-</tr>
+<div class="box">
+
+	<%= link_to (image_tag community.cover(:medium)), community %>
+	<p class="description">
+		<%= link_to community.description, community %>
+	</p>
+
+</div>

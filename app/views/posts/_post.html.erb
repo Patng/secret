@@ -1,5 +1,12 @@
-<tr>
-	<td><%= image_tag post.image(:medium) %></td>
-  <td><%= link_to post.description, post %></td>
-  <td><%= link_to post.community.description, post.community %></td>
-</tr>
+<div class="box">
+	<% if post.image.present? %> 
+		<%= link_to (image_tag post.image(:medium)), post %>
+	<% else %>
+	<% end %>
+	<p class="description">
+		<%= link_to post.description, post %>
+	</p>
+	<p>
+		@<%= link_to post.community.description, post.community %>
+	</p>
+</div>

@@ -1,20 +1,8 @@
-<h1>Communities</h1>
+<div class="span5 offset2">
+  <h1>Communities</h1>
+  <%= link_to 'New Community', new_community_path %>
+  <%= render @communities %>
+  <%= will_paginate @communities %>
+</div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Location</th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <%= render @communities %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Community', new_community_path %>

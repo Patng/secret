@@ -1,6 +1,9 @@
 <%= simple_form_for(@community, html: {class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
+  <%= f.full_error :image_file_size, class: "alert alert-error" %>
+  <%= f.full_error :image_content_type, class: "alert alert-error" %>
   
+  <%= f.input :cover, label: "Upload an image" %>
   <%= f.input :description %>
   <%= f.input :category, collection: ["School", "Organization", "Company", "Place", "Society", "Interest"], include_blank: false %>
   <%= f.input :location, collection: ["Hong Kong"], include_blank: false %>

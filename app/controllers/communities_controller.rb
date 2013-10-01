@@ -6,14 +6,14 @@ class CommunitiesController < ApplicationController
   # GET /communities
   # GET /communities.json
   def index
-    @communities = Community.order("created_at desc")
+    @communities = Community.order("created_at desc").page(params[:page]).per_page(10)
   end
 
   # GET /communities/1
   # GET /communities/1.json
   def show
     @community = Community.find(params[:id])
-    @posts = @community.posts
+    @posts = @community.posts.order("created_at desc")
   end
 
   # GET /communities/new
@@ -80,6 +80,6 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:description, :category, :location)
+      params.require(:community).permit(:description, :category, :location, :cover)
     end
 end

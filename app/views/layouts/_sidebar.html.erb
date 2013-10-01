@@ -1,6 +1,3 @@
 <h3>Trending Communities</h3>
-<ul>
-	<% @communities.each do |community| %>
- 	<li><%= link_to community.description, community %></li>
-		<% end %>
-</ul>
+
+<%= render @communities %>
