@@ -3,7 +3,7 @@ class NewsfeedsController < ApplicationController
 	
   def show
   	@user = current_user
-  	@posts = @user.posts.order("created_at desc").page(params[:page]).per_page(10)
+  	@posts = @user.community_posts.order("created_at desc").page(params[:page]).per_page(10)
   	@communities = Community.all.order("created_at desc")
 
 	  respond_to do |format|
@@ -13,3 +13,4 @@ class NewsfeedsController < ApplicationController
     end
   end
 end
+

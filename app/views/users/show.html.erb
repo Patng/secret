@@ -1,20 +1,11 @@
-<h2>My Communities</h2>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Cover</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Location</th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="span6 offset1">
+    <h2>My Posts</h2>
+    <%= render @posts %>
+  </div>
 
-  <tbody>
+  <div class="span3 offset1">
+    <h2>My Communities</h2>
     <%= render @communities %>
-  </tbody>
-</table>
-<h2>My Posts</h2>
-<div class="posts">
-  <%= render @posts %>
+  </div>
 </div>

@@ -1,39 +1,35 @@
-<%= image_tag @community.cover %>
-<p>
-  <strong>Description:</strong>
-  <%= @community.description %>
-</p>
+<div class="row">
+  <div class="span6 offset1">
+    <div class="box">
+      <%= image_tag @community.cover %>
+      <p>
+        <strong>Description:</strong>
+        <%= @community.description %>
+      </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @community.category %>
-</p>
+      <p>
+        <strong>Category:</strong>
+        <%= @community.category %>
+      </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @community.location %>
-</p>
+      <p>
+        <strong>Location:</strong>
+        <%= @community.location %>
+      </p>
 
-<p>
-  <strong>People:</strong>
-  <%= @community.users.size %>
-</p>
+      <p>
+        <strong>People:</strong>
+        <%= @community.users.size %>
+      </p>
 
-<%= link_to 'Join', join_community_path(@community) %>
+      <%= link_to 'Join', join_community_path(@community) %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>Community</th>
-      <th></th>
-    </tr>
-  </thead>
+      <div class="posts">
+        <%= render @posts %>
+        <%= will_paginate @posts %>
+      </div>
 
-  <tbody>
-    <%= render @posts %>
-  </tbody>
-</table>
-
-<%= link_to 'Back', communities_path %>
+      <%= link_to 'Back', communities_path %>
+    </div>
+  </div>
+</div>
