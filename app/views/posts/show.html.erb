@@ -14,6 +14,11 @@
 			  <%= link_to @post.community.description, @post.community %>
 			</p>
 
+				<p>
+					<%= link_to '<i class="icon-heart"></i>'.html_safe, votefor_post_path(@post), :method => :post %>
+					<%= @post.upvotes.size %>
+				</p>
+
 			<% if current_user == @post.user %>
 				<%= link_to 'Edit', edit_post_path(@post) %> | 
 				<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>

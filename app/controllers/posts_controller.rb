@@ -25,6 +25,12 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
   end
 
+  def votefor
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    redirect_to @post
+  end
+
   # GET /posts/1/edit
   def edit
   end

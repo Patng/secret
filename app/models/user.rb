@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   has_many :owned, :class_name => "Community", :foreign_key => "admin_id"
   has_many :posts
   has_many :community_posts, through: :communities, source: :posts
+
+  acts_as_voter
  end

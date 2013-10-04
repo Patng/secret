@@ -9,4 +9,8 @@
 	<p>
 		@<%= link_to post.community.description, post.community %>
 	</p>
+	<p>
+		<%= link_to '<i class="icon-heart"></i>'.html_safe, votefor_post_path(post), :method => :post %>
+		<%= post.upvotes.size %>
+	</p>
 </div>

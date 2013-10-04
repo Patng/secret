@@ -6,7 +6,12 @@ Secret::Application.routes.draw do
 
   get "newsfeeds/show"
   get "users/show"
-  resources :posts
+
+  resources :posts do
+      member do
+        post :votefor
+    end
+  end
 
   resources :communities do
     member do
