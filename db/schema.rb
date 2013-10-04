@@ -11,12 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001065954) do
+ActiveRecord::Schema.define(version: 20131003143252) do
+
+  create_table "categories", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "communities", force: true do |t|
     t.string   "description"
-    t.string   "category"
-    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "admin_id"
@@ -24,11 +28,19 @@ ActiveRecord::Schema.define(version: 20131001065954) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.integer  "category_id"
+    t.integer  "location_id"
   end
 
   create_table "communities_users", id: false, force: true do |t|
     t.integer "community_id"
     t.integer "user_id"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|

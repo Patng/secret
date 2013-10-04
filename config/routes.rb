@@ -1,5 +1,9 @@
 Secret::Application.routes.draw do
 
+  resources :locations, :except => ['new','edit', 'update', 'destroy']
+
+  resources :categories, :except => ['new','edit', 'update', 'destroy']
+
   get "newsfeeds/show"
   get "users/show"
   resources :posts

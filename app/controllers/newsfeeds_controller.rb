@@ -4,8 +4,7 @@ class NewsfeedsController < ApplicationController
   def show
   	@user = current_user
   	@posts = @user.community_posts.order("created_at desc").page(params[:page]).per_page(10)
-  	@communities = Community.all.order("created_at desc")
-
+  	@communities = Community.last(10)
 	  respond_to do |format|
 	    format.html # index.html.erb
 	    format.json { render json: @posts }

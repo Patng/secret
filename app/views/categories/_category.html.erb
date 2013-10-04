@@ -1,0 +1,8 @@
+<div class="box">
+<h3><%= link_to category.description, category %></h3>
+<p>
+  <% category.communities.last(5).each do |community| %>
+  <%= link_to community.description, community %>
+<% end %>
+</p>
+</div>

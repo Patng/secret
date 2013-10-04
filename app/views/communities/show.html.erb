@@ -9,12 +9,12 @@
 
       <p>
         <strong>Category:</strong>
-        <%= @community.category %>
+        <%= @community.category.description %>
       </p>
 
       <p>
         <strong>Location:</strong>
-        <%= @community.location %>
+        <%= @community.location.description %>
       </p>
 
       <p>
@@ -29,7 +29,6 @@
         <%= will_paginate @posts %>
       </div>
 
-      <%= link_to 'Back', communities_path %>
     </div>
   </div>
 </div>
