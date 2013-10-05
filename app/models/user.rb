@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   has_many :community_posts, through: :communities, source: :posts
 
   acts_as_voter
+
  end

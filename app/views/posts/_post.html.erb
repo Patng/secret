@@ -13,4 +13,8 @@
 		<%= link_to '<i class="icon-heart"></i>'.html_safe, votefor_post_path(post), :method => :post %>
 		<%= post.upvotes.size %>
 	</p>
+	<p>
+		<%= link_to '<i class="icon-comment"></i>'.html_safe, post %>
+		<%= post.comments.size %>
+	</p>
 </div>

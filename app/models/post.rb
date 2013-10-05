@@ -11,4 +11,6 @@ class Post < ActiveRecord::Base
 	belongs_to :community
 
 	acts_as_votable
+
+	acts_as_commentable
 end

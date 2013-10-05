@@ -1,5 +1,6 @@
 Secret::Application.routes.draw do
 
+  get "comments/create"
   resources :locations, :except => ['new','edit', 'update', 'destroy']
 
   resources :categories, :except => ['new','edit', 'update', 'destroy']
@@ -8,8 +9,8 @@ Secret::Application.routes.draw do
   get "users/show"
 
   resources :posts do
-      member do
-        post :votefor
+    member do
+      post :votefor
     end
   end
 
@@ -24,6 +25,11 @@ Secret::Application.routes.draw do
   root :to => 'newsfeeds#show'
 
   get 'about' => 'pages#about'
+
+  resources :posts do
+    resources :comments
+  end
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
