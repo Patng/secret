@@ -20,6 +20,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = @post.comments.new
     @comments = @post.comments.order("created_at desc").page(params[:page]).per_page(10)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @comments }
+      format.js
+    end
   end
 
   # GET /posts/new

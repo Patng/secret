@@ -12,6 +12,12 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @communities = @category.communities.order("created_at desc").page(params[:page]).per_page(10)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @communities }
+      format.js
+    end    
   end
 
   # GET /categories/new

@@ -10,7 +10,7 @@ class CommunitiesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.json { render json: @communities }
       format.js
     end
   end
@@ -23,7 +23,7 @@ class CommunitiesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.json { render json: @communities }
       format.js
     end
   end
