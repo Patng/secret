@@ -1,5 +1,5 @@
 <div class="span6 offset1">
-	<h1 class="alignleft">Discover Communities</h1>
-	<p class="alignright"><%= link_to 'Create Community', new_community_path %><p>
+	<h1>Discover Communities</h1>
+	<%= link_to 'Create Community', new_community_path, :class => 'btn btn-primary' %>
 	<%= render @categories %>
 </div>
