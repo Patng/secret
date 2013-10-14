@@ -10,6 +10,10 @@ $btnBackgroundHighlight: white;
 
 @import 'bootstrap';
 
+h1{
+	font-size: 25px;
+}
+
 body {
 	padding-top: 60px;
 	background: #F0F0F0;
@@ -60,29 +64,39 @@ body {
 	font-size: 11px;
 	line-height: 1.4em;
 	float: left;
-	box-shadow: 1px 1px 10px #444;
-	width: 100%;
+	box-shadow: 1px 1px 5px #444;
+	width: 95%;
 	background: white;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+
 }
 
 .box img {
 	display: block;
 	width: 100%;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+
+}
+
+.boxcom {
+	margin: 5px;
+	padding: 5px;
+	font-size: 11px;
+	line-height: 1.4em;
+	float: left;
+	box-shadow: 1px 1px 5px #444;
+	width: 200px;
+	background: white;
+
+}
+
+.boxcom img {
+	display: block;
+	width: 100%;
+
 }
 
 .description {
 	margin: 10px 0 5px;
 
-}
-
-.wrapper {
-	text-align: center;
 }
 
 .alignleft{
@@ -98,9 +112,19 @@ body {
 }
 
 .icon-blue{
-	color: #4169E1;
+	color: #6A5ACD;
 }
 
 .icon-purple{
 	color: #5B375B;
+}
+
+.icon-deepblue{
+	color: #4682B4;
+	font-size: 18px;
+}
+
+.boxpurple{
+	background: #5B375B;
+	color: white;
 }

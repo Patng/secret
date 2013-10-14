@@ -1,21 +1,21 @@
-<h3>
-  <%= @conversation.subject %>
-</h3>
+<div class="box">
+	<h3>
+	  <%= @conversation.subject %>
+	</h3>
 
-<div class="messages">
-  <% @receipts.each do |receipt| %>
-    <p><%= receipt.message.body %></p>
-  <% end %>
+	<div class="messages">
+	  <% @receipts.each do |receipt| %>
+	    <p class="box"><%= receipt.message.body %></p>
+	  <% end %>
 
+	</div>
+
+	<%= simple_form_for(:reply, url: {:action => "update"})  do |f| %>
+	  <%= f.error_notification %>
+	  <%= f.input :body, placeholder: 'Write a reply...', as: :text, input_html: { rows: "3", style: 'width: 95%' }, label: false%>
+
+	  <div class="form-actions">
+	    <%= f.button :submit, class: "btn btn-primary" %>
+	  </div>
+	<% end %>
 </div>
-
-<h1>Reply Message</h1>
-<%= simple_form_for(:reply, url: {:action => "update"}, html: {class: "form-horizontal"})  do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :body, as: :text, input_html: { rows: "3"} %>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
-<% end %>
-

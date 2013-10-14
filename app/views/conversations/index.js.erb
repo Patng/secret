@@ -1,0 +1,8 @@
+$boxes = $('<%= j render(@conversations) %>')
+
+$('#conversations').append( $boxes );
+<% if @conversations.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@conversations) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

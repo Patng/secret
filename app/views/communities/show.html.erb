@@ -2,27 +2,20 @@
   <div class="span6 offset1">
     <div class="box">
       <%= image_tag @community.cover %>
+      <h1>
+        <strong><%= @community.description %></strong>
+      </h1>
+      <p class="alignright">
+        <%= link_to 'Join/Leave', join_community_path(@community), :class => 'btn'%>
+      </P>
       <p>
-        <strong>Description:</strong>
-        <%= @community.description %>
-      </p>
-
-      <p>
-        <strong>Category:</strong>
-        <%= @community.category.description %>
-      </p>
-
-      <p>
-        <strong>Location:</strong>
-        <%= @community.location.description %>
-      </p>
-
-      <p>
-        <strong>People:</strong>
+        <%= @community.category.description %> | 
+        <%= @community.location.description %> | 
+        <i class="icon-group icon-purple"></i>
         <%= @community.users.size %>
       </p>
 
-      <%= link_to 'Join/Leave', join_community_path(@community) %>
+      
 
       <div id="posts">
         <%= render @posts %>

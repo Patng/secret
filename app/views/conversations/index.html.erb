@@ -1,5 +1,8 @@
 <div class="span6 offset1">
-  <%= render @conversations %>
+	<h1>All Messages</h1>
+	<div id="conversations">
+	  <%= render @conversations %>
+	</div>
   <%= will_paginate @conversations %>
 </div>
 

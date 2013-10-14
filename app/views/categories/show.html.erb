@@ -1,12 +1,13 @@
 <div class="row">
-	<div class="span6 offset1">
+	<div class="span10 offset1">
 		<h3>
 		  <%= @category.description %>
 		</h3>
-	  <div class="communities">
+	  <div id="communities">
       <%= render @communities %>
-      <%= will_paginate @communities %>
+      
     </div>
+    <%= will_paginate @communities %>
 	</div>
 </div>
 

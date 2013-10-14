@@ -1,11 +1,14 @@
 <div class="row">
   <div class="span6 offset1">
-    <h2>My Gossips</h2>
-    <%= render @posts %>
+    <h1>My Secrets</h1>
+    <div id="posts">
+	    <%= render @posts %>
+	  </div>
+    <%= will_paginate @posts %>
   </div>
 
   <div class="span3 offset1">
-    <h2>My Communities</h2>
+    <h1>My Communities</h1>
     <%= render @communities %>
   </div>
 </div>

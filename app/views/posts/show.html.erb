@@ -8,30 +8,33 @@
 			<p>
 			  <%= @post.description %>
 			</p>
-
 			<p>
-			  @
-			  <%= link_to @post.community.description, @post.community %>
+				<% if current_user == @post.user %>
+					<%= link_to 'Edit', edit_post_path(@post) %> | 
+					<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
 			</p>
 
-				<p>
-					<%= link_to '<i class="icon-heart"></i>'.html_safe, votefor_post_path(@post), :method => :post %>
-					<%= @post.upvotes.size %>
-				</p>
-				<p>
-					<%= link_to '<i class="icon-comment"></i>'.html_safe, @post %>
-					<%= @post.comments.size-1 %>
-				</p>
+			<div id="actions">
 
-			<% if current_user == @post.user %>
-				<%= link_to 'Edit', edit_post_path(@post) %> | 
-				<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-			<% end %>
+					<%= link_to '@ ' + @post.community.description, @post.community, :class => 'btn' %>
 
-			<%= simple_form_for [@post, @comment] do |f| %>
-			  <%= f.input :comment, as: :text, input_html: { rows: "3"} %>
-			  <%= f.button :submit, class: "btn btn-primary" %>
-			<% end %>
+				<div class="alignright">
+					<% if current_user != @post.user %>
+					<%= link_to '<i class="icon-envelope icon-purple"></i> '.html_safe, message_post_path(@post), :class => 'btn' %>
+					<% end %>
+					<%= link_to '<i class="icon-heart icon-pink"></i> '.html_safe + @post.upvotes.size.to_s, votefor_post_path(@post), :method => :post, :class => 'btn' %>
+					<%= link_to '<i class="icon-comment icon-blue"></i> '.html_safe + (@post.comments.size - 1).to_s, @post, :class => 'btn' %>
+				</div>
+			</div>
+			<br>
+			<div>
+				<%= simple_form_for [@post, @comment] do |f| %>
+					<%= f.error_notification %>
+				  <%= f.input :comment, placeholder: 'Write a comment...',as: :text, input_html: { rows: "3", style: 'width: 95%'}, label: false %>
+				  <%= f.button :submit, class: "btn btn-primary" %>
+				<% end %>
+			</div>
 			<div id="comments">
 				<%= render @comments %>
 				

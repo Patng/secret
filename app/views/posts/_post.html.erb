@@ -16,6 +16,7 @@
 			<% end %>
 			<%= link_to '<i class="icon-heart icon-pink"></i> '.html_safe + post.upvotes.size.to_s, votefor_post_path(post), :method => :post, :class => 'btn' %>
 			<%= link_to '<i class="icon-comment icon-blue"></i> '.html_safe + post.comments.size.to_s, post, :class => 'btn' %>
+
 		</p>
 	</div>
 </div>

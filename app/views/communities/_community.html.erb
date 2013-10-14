@@ -1,8 +1,11 @@
-<div class="box">
+<div class="boxcom">
 
 	<%= link_to (image_tag community.cover(:medium)), community %>
-	<p class="description">
+	<p class="description alignleft">
 		<%= link_to community.description, community %>
+	</p>
+	<p class="description alignright">
+		<%= link_to '<i class="icon-group icon-purple"></i> '.html_safe + community.users.size.to_s, community %>
 	</p>
 
 </div>
