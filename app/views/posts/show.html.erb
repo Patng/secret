@@ -32,10 +32,11 @@
 			  <%= f.input :comment, as: :text, input_html: { rows: "3"} %>
 			  <%= f.button :submit, class: "btn btn-primary" %>
 			<% end %>
-			<div class="comments">
+			<div id="comments">
 				<%= render @comments %>
-				<%= will_paginate @comments %>
+				
 			</div>
+			<%= will_paginate @comments %>
 
 		</div>
 

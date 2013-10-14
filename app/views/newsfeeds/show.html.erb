@@ -1,12 +1,13 @@
 <div class="row">
   <div class="span6 offset1">
-
-	  <%= button_to('Write a Gossip', new_post_path, :class => 'btn btn-large btn-block btn-primary', :method => :get) %>
-
-    <div class="posts">
-      <%= render @posts %>
-      <%= will_paginate @posts %>
+    <div class="wrapper">
+	   <%= link_to 'Share a Secret', new_post_path, :class => 'btn btn-primary'  %>
     </div>
+    <div id="posts">
+      <%= render @posts %>
+      
+    </div>
+    <%= will_paginate @posts %>
   </div>
   <div class="span3 offset1">
     <%= render 'layouts/sidebar' %>

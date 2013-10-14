@@ -1,0 +1,14 @@
+<h1>New Message</h1>
+<%= @subject %>
+<%= @recipientid %>
+<%= simple_form_for(:message, url: messages_path, html: {class: "form-horizontal"})  do |f| %>
+  <%= f.error_notification %>
+  <%= f.hidden_field :recipientid, :value => @recipientid %>
+  <%= f.hidden_field :subject, :value => @subject %>
+  <%= f.input :body, as: :text, input_html: { rows: "3"} %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
+

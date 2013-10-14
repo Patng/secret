@@ -28,6 +28,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def message
+    @post = Post.find(params[:id])
+    @conversation = current_user.mailbox.conversations.where(:subject => @post.description)
+    if @conversation.blank?
+      redirect_to :controller => 'messages', :action => 'new', :post_description => @post.description, :post_userid => @post.user_id
+    else
+      redirect_to conversations_path
+    end
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
@@ -95,4 +105,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:description, :community_id, :image)
     end
+
 end

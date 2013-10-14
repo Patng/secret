@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-	has_attached_file :image, styles: { medium: "320x240>"}
+	has_attached_file :image, styles: { medium: "480x360>"}
 
 	validates :description, presence: true
 	validates :community_id, presence: true

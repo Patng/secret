@@ -6,15 +6,16 @@
 	<p class="description">
 		<%= link_to post.description, post %>
 	</p>
-	<p>
-		@<%= link_to post.community.description, post.community %>
-	</p>
-	<p>
-		<%= link_to '<i class="icon-heart"></i>'.html_safe, votefor_post_path(post), :method => :post %>
-		<%= post.upvotes.size %>
-	</p>
-	<p>
-		<%= link_to '<i class="icon-comment"></i>'.html_safe, post %>
-		<%= post.comments.size %>
-	</p>
+	<div id="actions">
+		<p class="alignleft">
+			<%= link_to '@ ' + post.community.description, post.community, :class => 'btn' %>
+		</p>
+		<p class="alignright">
+			<% if current_user != post.user %>
+			<%= link_to '<i class="icon-envelope icon-purple"></i> '.html_safe, message_post_path(post), :class => 'btn' %>
+			<% end %>
+			<%= link_to '<i class="icon-heart icon-pink"></i> '.html_safe + post.upvotes.size.to_s, votefor_post_path(post), :method => :post, :class => 'btn' %>
+			<%= link_to '<i class="icon-comment icon-blue"></i> '.html_safe + post.comments.size.to_s, post, :class => 'btn' %>
+		</p>
+	</div>
 </div>

@@ -42,7 +42,13 @@ class CommunitiesController < ApplicationController
   end
 
   def join
-    current_user.communities << @community
+    if current_user.communities.exists?@community
+      current_user.communities.delete(@community)
+      redirect_to @community
+    else
+      current_user.communities << @community
+      redirect_to @community
+    end
   end
 
   # POST /communities

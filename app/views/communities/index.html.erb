@@ -1,7 +1,9 @@
 <div class="span6 offset1">
   <h1>Communities</h1>
   <%= link_to 'New Community', new_community_path %>
-  <%= render @communities %>
+  	<div id="communities">
+        <%= render @communities %>       
+      </div>  
   <%= will_paginate @communities %>
 </div>
 

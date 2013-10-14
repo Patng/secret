@@ -1,10 +1,12 @@
 $baseFontFamily: Oxygen;
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
-$navbarBackgroundHighlight: #663366;
-$navbarBackground: #663366;
-$btnPrimaryBackground: #663366;
-$btnPrimaryBackgroundHighlight: #663366;
+$navbarBackgroundHighlight: #5B375B;
+$navbarBackground: #5B375B;
+$btnPrimaryBackground: #5B375B;
+$btnPrimaryBackgroundHighlight: #5B375B;
+$btnBackground: white;
+$btnBackgroundHighlight: white;
 
 @import 'bootstrap';
 
@@ -12,11 +14,11 @@ body {
 	padding-top: 60px;
 	background: #F0F0F0;
 	a {
-  	color: #663366;
+  	color: #5B375B;
   }
   a:hover {
    	text-decoration: none;
-  	color: #663366;
+  	color: #5B375B;
   }
 }
 
@@ -77,4 +79,28 @@ body {
 .description {
 	margin: 10px 0 5px;
 
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.alignleft{
+	float: left;
+}
+
+.alignright{
+	float: right;
+}
+
+.icon-pink{
+	color: #DB7093;
+}
+
+.icon-blue{
+	color: #4169E1;
+}
+
+.icon-purple{
+	color: #5B375B;
 }

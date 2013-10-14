@@ -22,12 +22,13 @@
         <%= @community.users.size %>
       </p>
 
-      <%= link_to 'Join', join_community_path(@community) %>
+      <%= link_to 'Join/Leave', join_community_path(@community) %>
 
-      <div class="posts">
+      <div id="posts">
         <%= render @posts %>
-        <%= will_paginate @posts %>
+        
       </div>
+      <%= will_paginate @posts %>
 
     </div>
   </div>

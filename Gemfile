@@ -11,6 +11,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'acts_as_votable', '~> 0.7.1'
 gem 'acts_as_commentable'
+gem 'mailboxer'
 
 # Use sqlite3 as the database for Active Record
 group :production do

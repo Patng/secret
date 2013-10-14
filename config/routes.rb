@@ -1,6 +1,13 @@
 Secret::Application.routes.draw do
 
-  get "comments/create"
+  resources :conversations do
+    member do
+      post :update
+    end
+  end
+
+  resources :messages
+
   resources :locations, :except => ['new','edit', 'update', 'destroy']
 
   resources :categories, :except => ['new','edit', 'update', 'destroy']
@@ -11,6 +18,7 @@ Secret::Application.routes.draw do
   resources :posts do
     member do
       post :votefor
+      get :message
     end
   end
 
