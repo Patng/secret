@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
 
   def show
   	@conversation = Conversation.find_by_id(params[:id])
-  	@receipts = @mailbox.receipts_for(@conversation)
+  	@receipts = @mailbox.receipts_for(@conversation).order("created_at asc")
     @conversation.mark_as_read(current_user)
   end
 
