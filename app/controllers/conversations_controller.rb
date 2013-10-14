@@ -9,6 +9,7 @@ class ConversationsController < ApplicationController
   def show
   	@conversation = Conversation.find_by_id(params[:id])
   	@receipts = @mailbox.receipts_for(@conversation)
+    @conversation.mark_as_read(current_user)
   end
 
   def update

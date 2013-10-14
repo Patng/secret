@@ -1,7 +1,12 @@
 <div class="row">
   <div class="span6 offset1">
+      <% if @notifications > 0 %>
+        <div class="well">You have <%= @notifications %> new message(s).</div>
+        <% else %>
+      <% end %>
     <div class="wrapper">
 	   <%= link_to 'Share a Secret...', new_post_path, :class => 'btn btn-primary'  %>
+     
     </div>
     <div id="posts">
       <%= render @posts %>
