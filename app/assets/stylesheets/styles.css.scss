@@ -10,6 +10,12 @@ $btnBackgroundHighlight: white;
 
 @import 'bootstrap';
 
+@media (max-width: 767px) { 
+	html{
+		font-size: 10px;
+	}
+ }
+
 h1{
 	font-size: 25px;
 }
