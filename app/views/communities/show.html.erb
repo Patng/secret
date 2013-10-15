@@ -5,6 +5,9 @@
       <h1>
         <strong><%= @community.description %></strong>
       </h1>
+      <p>
+        <%= @community.intro %>
+      </p>
       <p class="alignright">
         <%= link_to 'Join/Leave', join_community_path(@community), :class => 'btn'%>
       </P>

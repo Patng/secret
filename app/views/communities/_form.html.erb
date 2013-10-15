@@ -4,8 +4,8 @@
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
   
   <%= f.input :cover, label: "Upload an image" %>
-  <%= f.input :description %>
-  <%= f.input :intro %>
+  <%= f.input :description, label: "Name" %>
+  <%= f.input :intro, label: "Description" %>
   <%= f.association :category, collection: @categories, label_method: :description, value_method: :id, include_blank: false %>
   <%= f.association :location, collection: @locations, label_method: :description, value_method: :id, include_blank: false %>
 
