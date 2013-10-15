@@ -16,7 +16,7 @@
 			</p>
 
 			<div id="actions">
-
+					<%= social_share_button_tag(@post.description) %>
 					<%= link_to '@ ' + @post.community.description, @post.community, :class => 'btn' %>
 
 				<div class="alignright">
