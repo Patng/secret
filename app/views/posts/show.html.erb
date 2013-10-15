@@ -16,7 +16,7 @@
 			</p>
 
 			<div id="actions">
-					<%= social_share_button_tag(@post.description, :url =>"#{request.protocol}#{request.host_with_port}#{request.fullpath}") %>
+					<%= social_share_button_tag(@post.description, :'data-url' => "http://#{request.host}:#{request.port}#{request.fullpath}") %>
 					<%= link_to '@ ' + @post.community.description, @post.community, :class => 'btn' %>
 
 				<div class="alignright">
