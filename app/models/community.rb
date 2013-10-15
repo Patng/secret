@@ -5,6 +5,7 @@ class Community < ActiveRecord::Base
 	validates :description, presence: true
 	validates :category_id, presence: true
 	validates :location_id, presence: true
+	validates :intro, presence: true
 	validates :admin_id, presence: true
 	validates_attachment :cover, presence: true, 
 																content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']},

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007142239) do
+ActiveRecord::Schema.define(version: 20131015145703) do
 
   create_table "categories", force: true do |t|
     t.string   "description"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20131007142239) do
     t.datetime "cover_updated_at"
     t.integer  "category_id"
     t.integer  "location_id"
+    t.string   "intro"
   end
 
   create_table "communities_users", id: false, force: true do |t|

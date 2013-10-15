@@ -5,6 +5,7 @@
   
   <%= f.input :cover, label: "Upload an image" %>
   <%= f.input :description %>
+  <%= f.input :intro %>
   <%= f.association :category, collection: @categories, label_method: :description, value_method: :id, include_blank: false %>
   <%= f.association :location, collection: @locations, label_method: :description, value_method: :id, include_blank: false %>
 

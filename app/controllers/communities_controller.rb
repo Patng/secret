@@ -104,6 +104,6 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:description, :location_id, :cover, :category_id)
+      params.require(:community).permit(:description, :intro, :location_id, :cover, :category_id)
     end
 end
