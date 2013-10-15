@@ -13,18 +13,21 @@
 					<%= link_to 'Edit', edit_post_path(@post) %> | 
 					<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 				<% end %>
+				
 			</p>
 
 			<div id="actions">
-					<%= social_share_button_tag(@post.description, :'data-url' => "http://#{request.host}:#{request.port}#{request.fullpath}") %>
+					<%= social_share_button_tag(@post.description) %>
 					<%= link_to '@ ' + @post.community.description, @post.community, :class => 'btn' %>
 
 				<div class="alignright">
+
 					<% if current_user != @post.user %>
 					<%= link_to '<i class="icon-envelope icon-purple"></i> '.html_safe, message_post_path(@post), :class => 'btn' %>
 					<% end %>
 					<%= link_to '<i class="icon-heart icon-pink"></i> '.html_safe + @post.upvotes.size.to_s, votefor_post_path(@post), :method => :post, :class => 'btn' %>
 					<%= link_to '<i class="icon-comment icon-blue"></i> '.html_safe + (@post.comments.size - 1).to_s, @post, :class => 'btn' %>
+
 				</div>
 			</div>
 			<br>
