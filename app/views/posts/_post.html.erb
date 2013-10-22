@@ -6,6 +6,7 @@
 	<p class="description">
 		<%= link_to post.description, post %>
 	</p>
+	<%= link_to 'Share on Facebook', 'http://www.facebook.com/sharer.php?u='+post_url(post).to_s, :target => :blank %>
 	<div id="actions">
 		<p class="alignleft">
 			<%= link_to '@ ' + post.community.description, post.community, :class => 'btn' %>
