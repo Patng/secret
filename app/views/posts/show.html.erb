@@ -1,7 +1,7 @@
 <% content_for :head do %>
-  <meta property="og:title" content="title" />
-	<meta property="og:description" content="description" />
-	<meta property="og:image" content="thumbnail_image" />
+  <meta property="og:title" content="<%= @post.description %>" />
+	<meta property="og:description" content="<%= @post.description %>" />
+	<meta property="og:image" content="<%= "http://www.n2itivenutrition.com/wp-content/uploads/2013/08/top-secret.gif" %>" />
 	<meta property="og:url"    content="<%= "http://gossiips.herokuapp.com" + post_path(@post) %>" />
 <% end %>
 
@@ -15,7 +15,7 @@
 			<p>
 			  <%= @post.description %>
 			</p>
-			<%= link_to 'Share on Facebook', 'http://www.facebook.com/sharer.php?u='+request.original_url, :target => :blank %>
+			
 			<p>
 				<% if current_user == @post.user %>
 					<%= link_to 'Edit', edit_post_path(@post) %> | 
@@ -23,9 +23,8 @@
 				<% end %>
 				
 			</p>
-
+			<%= link_to 'Share on Facebook', 'http://www.facebook.com/sharer.php?u='+request.original_url, :target => :blank %>
 			<div id="actions">
-					<%= social_share_button_tag(@post.description) %>
 					<%= link_to '@ ' + @post.community.description, @post.community, :class => 'btn' %>
 
 				<div class="alignright">
