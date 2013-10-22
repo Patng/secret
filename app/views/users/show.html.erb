@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="span6 offset1">
+<div class="row-fluid">
+  <div class="span8">
     <h1>My Secrets</h1>
     <div id="posts">
 	    <%= render @posts %>
@@ -7,7 +7,7 @@
     <%= will_paginate @posts %>
   </div>
 
-  <div class="span3 offset1 visible-desktop">
+  <div class="span4 visible-desktop">
     <h1>My Communities</h1>
     <%= render @communities %>
   </div>

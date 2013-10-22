@@ -1,14 +1,16 @@
 $baseFontFamily: Oxygen;
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
-$navbarBackgroundHighlight: #5B375B;
-$navbarBackground: #5B375B;
-$btnPrimaryBackground: #5B375B;
-$btnPrimaryBackgroundHighlight: #5B375B;
+$navbarBackgroundHighlight: #533354;
+$navbarBackground: #533354;
+$btnPrimaryBackground: #533354;
+$btnPrimaryBackgroundHighlight: #533354;
 $btnBackground: white;
 $btnBackgroundHighlight: white;
 
 @import 'bootstrap';
+
+
 
 h1{
 	font-size: 25px;
@@ -16,28 +18,31 @@ h1{
 
 body {
 	padding-top: 60px;
-	background: #F0F0F0;
+	background: #F3F3F3;
 	a {
-  	color: #5B375B;
+  	color: #533354;
   }
   a:hover {
    	text-decoration: none;
-  	color: #5B375B;
+  	color: #533354;
   }
 }
 
+
+
+
 @import 'bootstrap-responsive';
+
+.navbar .container {
+	max-width: 900px;
+}
+
+.container {
+	max-width: 900px;
+}
 
 .navbar-simple .brand {
 	color: white;
-}
-
-.navbar-simple .navbar-inner{
-    border: 0;
-	  filter: none !important;
-		box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-		-moz-box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-		-webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.25);
 }
 
 .navbar .nav > li  {
@@ -49,6 +54,14 @@ body {
     }
 }
 
+.navbar-inner{
+    @include box-shadow(none !important);
+    border: 0;
+}
+
+.dropdown-menu {
+	background: #533354;
+}
 
 .footer {
 	margin-top: 50px;
@@ -59,15 +72,17 @@ body {
 }
 
 .box {
-	margin: 5px;
+	margin: 0px;
 	padding: 5px;
 	font-size: 11px;
 	line-height: 1.4em;
 	float: left;
-	box-shadow: 1px 1px 5px #444;
-	width: 95%;
+	border: 1px solid #ddd;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.055);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.055);
+	box-shadow: 0 1px 3px rgba(0,0,0,.055);
+	width: 100%;
 	background: white;
-
 }
 
 .boxunread {
@@ -88,13 +103,13 @@ body {
 }
 
 .boxcom {
-	margin: 5px;
-	padding: 5px;
+	margin: 0px;
+	padding: 0px;
 	font-size: 11px;
 	line-height: 1.4em;
 	float: left;
-	box-shadow: 1px 1px 5px #444;
-	width: 200px;
+	box-shadow: 1px 1px 1px #444;
+	width: 100%;
 	background: white;
 
 }
@@ -127,7 +142,7 @@ body {
 }
 
 .icon-purple{
-	color: #5B375B;
+	color: #533354;
 }
 
 .icon-deepblue{
@@ -136,6 +151,6 @@ body {
 }
 
 .boxpurple{
-	background: #5B375B;
+	background: #533354;
 	color: white;
 }
